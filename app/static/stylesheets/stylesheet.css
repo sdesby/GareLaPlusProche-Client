@@ -1,0 +1,49 @@
+body {
+	background-color: #F5E5D3;
+	font-family: Verdana;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+div#colonne1{
+	float:left;
+	width: 320px;
+	height:1000px;
+	}
+	
+div#colonne2{
+	float:right;
+	width: 320px;
+	height: 1000px;
+}
+
+div#centre{
+	height: 1000px;
+	margin-left: 325px;
+    margin-right: 325px;
+}
+
+div#error{
+	color: red;
+	font-size: 18px;
+	text-decoration: bold;
+	margin-top: 20px;
+}
+
+div#address {
+	text-align: center;
+}
+
+div#result {
+	border: 2px solid black;
+	text-align: left;
+	margin-top: 30px;
+}
+
+div#result ul {
+	list-style-position: inside;
+}
+
+
