@@ -1,3 +1,5 @@
+#coding: utf-8
+
 class TrainStation:
 
 	def initialize(self, m_id, name, howbig, latitude, longitude, postalCode, city, department, region):
@@ -12,7 +14,7 @@ class TrainStation:
 		self.region = region
 
 	def _get_prettyName(self):
-		return self.prettyName
+		return self.prettyName.decode("utf-8")
 
 	def _set_prettyName(self, name):
 		self.prettyName = name
@@ -32,4 +34,4 @@ class TrainStation:
 	def _get_department(self):
 		return self.department
 	def _get_region(self):
-		return self.region
+		return self.region.decode("utf-8")

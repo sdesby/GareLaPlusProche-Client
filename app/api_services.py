@@ -1,4 +1,4 @@
-#codint: utf-8
+#coding: utf-8
 from urllib2 import Request, urlopen, URLError
 import json
 from models import TrainStation
@@ -14,15 +14,16 @@ def get_nearest_train_station(address):
         station = json.loads(response.read())
         print "Reading response"
         #m_id = station["_id"]["$oid"]
-        name = station["name"]
-        howbig = station["howbig"]
+        name = station["name"].encode("utf-8")
+        howbig = station["howbig"].encode("utf-8")
         latitude = station["latitude"]
         longitude = station["longitude"]
         postal_code = station["postalCode"]
-        city = station["city"]
-        region =station["region"]
+        city = station["city"].encode("utf-8")
+        department= station["department"].encode("utf-8")
+        region =station["region"].encode("utf-8")
         station = TrainStation()
-        station.initialize("1", name, howbig, latitude, longitude, postal_code, city, "", region)
+        station.initialize("1", name, howbig, latitude, longitude, postal_code, city, department, region)
         return station
 
     except URLError, e:
