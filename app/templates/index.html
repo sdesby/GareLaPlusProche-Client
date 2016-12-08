@@ -15,7 +15,8 @@
 		</form>
 		{% if error != ""%}
 			<div id="error">
-				Erreur : {{error}}
+				Erreur : <br>
+				{{error}}
 			</div>
 		{% endif %}
 	</div>
@@ -25,8 +26,6 @@
 			<h1>Résultat de votre recherche</h1>
 			<p>
 				Gare la plus proche : {{station._get_prettyName()}}
-				 </br>
-				 Adresse :
 			 	</br>
 				<ul>
 					<li>Code postal : {{station._get_postal_code()}}</li>
@@ -34,16 +33,19 @@
 					<li>Départment : {{station._get_department()}}</li>
 					<li>Région : {{station._get_region()}}</li>
 				</ul>
-				 </br>
-				 </br>
-				Votre adresse : {{address}}
-			</p>
 			<p>
 				Coordonnées GPS de la gare :
 			<ul>
 				<li>Latitude : {{station._get_latitude()}}</li>
 				<li>Longitude : {{station._get_longitude()}}</li>
 			</ul>
+			Voir sur OpenStreetMap : </br>
+			<a href="http://www.openstreetmap.org/search?query={{station._get_latitude()}}%2C%20{{station._get_longitude()}}">
+				http://www.openstreetmap.org/search?query={{station._get_latitude()}}%2C%20{{station._get_longitude()}}
+			</a>
+			</p>
+			<p>
+				Rappel de votre recherche : </br> {{address}}
 			</p>
 	</div>
 	{% endif %}
