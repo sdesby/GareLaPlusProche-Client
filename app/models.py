@@ -14,7 +14,7 @@ class TrainStation:
 		self.region = region
 
 	def _get_prettyName(self):
-		return self.prettyName.decode("utf-8")
+		return self.prettyName
 
 	def _set_prettyName(self, name):
 		self.prettyName = name
@@ -34,4 +34,4 @@ class TrainStation:
 	def _get_department(self):
 		return self.department
 	def _get_region(self):
-		return self.region.decode("utf-8")
+		return self.region
