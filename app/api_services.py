@@ -3,7 +3,10 @@
 from urllib2 import Request, urlopen, URLError
 import json
 from models import TrainStation
-HOST="http://localhost:5000"
+import os
+
+HOST = os.environ.get("API_URL")
+
 
 def get_nearest_train_station(address):
     url = HOST + "/nearest-station?address=" + address
@@ -34,13 +37,9 @@ def get_nearest_train_station(address):
         else:
             return json.dumps(station)
 
-
     except URLError, e:
         print e
         if "HTTP Error 400" in str(e):
-		    return 400
+            return 400
         else:
             return -1
-
-if __name__ == "__main__":
-    get_nearest_train_station("14 rue de vignolle, 51120 saint-quentin-le-verger")
