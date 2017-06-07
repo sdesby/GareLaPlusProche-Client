@@ -1,5 +1,12 @@
 #Python extensions
 *.pyc
 
+#Virtual env
+*env
+
 #Private config
 *.properties
+
+#Idea files
+.idea
+.idea/*
